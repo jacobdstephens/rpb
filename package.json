@@ -1,0 +1,15 @@
+{
+  "name": "Rock Paper Bitcoin",
+  "version": "0.0.0",
+  "description": "Demo for RPB",
+  "main": "app.js",
+  "author": {
+    "name": "Jacob",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "stylus": "*"
+  }
+}

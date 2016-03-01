@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>RPB</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/skeleton.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	
+		<div class="container">
+			<div class="row">
+				<div class = "one-half column">
+					<h2>Rock Paper Bitcoin</h2>
+  					<form id="myForm">
+    					<input type="radio" name="rpb" value="Rock">
+    					<span>Rock</span>
+						<input type="radio" name="rpb" value="Paper">
+    					<span>Paper</span>
+						<input type="radio" name="rpb"value="Bitcoin">
+    					<span>Bitcoin</span>
+  					</form>
+					<div>
+						<p>Ready to Play. Select Rock, Paper or Bitcoin, then press Play!</p>
+					</div>
+					<button id="play" class="button">Play</button>
+				</div>
+			</div>
+		</div>
+<!--script>
+$("#play").click(function() { var val = $('input[type=radio]:checked').val();
+$('p').text("You played " + val );
+});
+</script-->
+<script src ="assets/js/main.js"></script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
