@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 app.use(express.static('public'));
+var io = require('socket.io')(http);
 var http = require('http').Server(app);
 var port = 5000;
 
@@ -9,7 +10,6 @@ app.get('/:file', function(req, res){
 });
 
 // setup my socket server
-var io = require('socket.io')(http);
  
 io.on('connection', function(socket) {
     console.log('New connection');
