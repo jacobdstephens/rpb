@@ -16,7 +16,7 @@ io.on('connection', function(socket) {
  
     socket.on('message', function(msg) {
         console.log('Got message from client: ' + msg);
-    }
+    });
 });
 
 // Called when the client calls socket.emit('move')
