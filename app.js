@@ -9,18 +9,8 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
-// setup my socket server
- 
-io.on('connection', function(socket) {
-    console.log('New connection');
- 
-    socket.on('message', function(msg) {
-        console.log('Got message from client: ' + msg);
-    });
-	// Called when the client calls socket.emit('move')
-	socket.on('move', function(msg) {
-		socket.broadcast.emit('move', msg);
-	});
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
 
 http.listen(port, function() {
