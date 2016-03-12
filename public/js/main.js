@@ -1,4 +1,4 @@
-var socket = io();
+/*var socket = io();*/
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
