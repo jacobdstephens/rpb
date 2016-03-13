@@ -10,6 +10,7 @@ app.get('/:file', function(req, res){
 });
 
 io.on('connection', function(socket){
+	alert("a user connected")
 	console.log('a user connected');
 });
 
