@@ -1,4 +1,4 @@
-var socket = io();
+/*var io = require('socket.io-client');*/
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
