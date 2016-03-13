@@ -1,19 +1,17 @@
-var express = require('express');
-var app = express();
-app.use(express.static('public'));
-var io = require('socket.io')(http);
-var http = require('http').Server(app);
-var port = 5000;
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-app.get('/:file', function(req, res){
-	res.sendFile(__dirname + '/' + req.params.file);
+server.listen(5000);
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
 });
 
-io.on('connection', function(socket){
-	alert("a user connected")
-	console.log('a user connected');
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
 });
 
-http.listen(port, function() {
-	console.log('listening on *: ' + port);
-});

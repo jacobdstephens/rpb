@@ -59,6 +59,14 @@
 				</div>
 			</div>
 		</div>
+		
+<script>
+  var socket = io.connect();
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
 			
 <script src ="js/main.js"></script>
 
