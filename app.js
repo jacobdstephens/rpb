@@ -16,9 +16,9 @@ app.get('/:file', function(req, res){
 });
 
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
+	console.log('a user connected');
+  	socket.on('my other event', function (data) {
+    	console.log(data);
+  	});
 });
 
