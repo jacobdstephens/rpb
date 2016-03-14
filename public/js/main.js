@@ -1,4 +1,7 @@
 var socket = io.connect();  
+socket.on('this', function(msg){
+    $('p').text(msg));
+  });
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
@@ -10,7 +13,5 @@ $("#play").click(function() {
 	/*alert("You played "+ val );*/
 });
 
-socket.on('this', function(msg){
-    $('p').text(msg));
-  });
+
 
