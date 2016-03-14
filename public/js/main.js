@@ -1,7 +1,8 @@
-var socket = io.connect();
+
   
 
 $("#play").click(function() { 
+	var socket = io.connect();
 	var val = $('input[type=radio]:checked').val();
 	/*socket.emit('message', 'hello world!');*/
 	$('p').text("You played " + val );
