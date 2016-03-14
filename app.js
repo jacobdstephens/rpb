@@ -17,6 +17,7 @@ app.get('/:file', function(req, res){
 
 io.on('connection', function (socket) {
 	console.log('a user connected');
+	io.emit('this', { will: 'be received by everyone'});
   	socket.on('my other event', function (data) {
     	console.log(data);
   	});
