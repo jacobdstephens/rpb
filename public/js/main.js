@@ -7,7 +7,7 @@ socket.on('call', function(data){
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
 	$('p').text("You played " + val );
-	socket.emit('my other event', { my: val });
+	socket.emit('play', { my: val });
 	console.log("You played "+ val);
 	
 });

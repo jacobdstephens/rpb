@@ -17,10 +17,10 @@ app.get('/:file', function(req, res){
 
 io.on('connection', function (socket) {
 	console.log('a user connected');
-	io.emit('call', { who : 'there'
-	});
-  	socket.on('my other event', function (data) {
+  	socket.on('play', function (data){
     	console.log(data);
+		io.emit('call', { who: 'there'
+		});
   	});
 });
 
