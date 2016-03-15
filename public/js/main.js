@@ -9,7 +9,7 @@ $("#play").click(function() {
 });
 
 socket.on('play', function(msg){
-	$("them").text(msg);
+	$("#them").text(msg);
 });
 
 
