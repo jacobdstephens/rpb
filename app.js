@@ -17,10 +17,9 @@ app.get('/:file', function(req, res){
 
 io.on('connection', function (socket) {
 	console.log('a user connected');
-  	socket.on('play', function (data){
+  	socket.on('play', function (msg){
     	console.log(data);
-		io.emit('call', { who: 'there'
-		});
+		io.emit('play', msg);
   	});
 });
 
