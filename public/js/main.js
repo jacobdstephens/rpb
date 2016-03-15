@@ -1,7 +1,7 @@
 socket = io.connect();
   
-socket.on('call', function(msg){
-	$('p').text(msg);
+socket.on('call', function(data){
+	$('p').text(data);
 });
 
 $("#play").click(function() { 
