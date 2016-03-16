@@ -1,9 +1,9 @@
 socket = io.connect();
   
 
-/*socket.on('player', function(id){
+socket.on('player', function(id){
 	$("#them").text( "player id " + id);
-});*/
+});
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
