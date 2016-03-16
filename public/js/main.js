@@ -1,4 +1,5 @@
 socket = io.connect();
+socket.emit('player', socket.id);
   
 
 socket.on('player', function(id){
@@ -7,7 +8,6 @@ socket.on('player', function(id){
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
-	/*socket.emit('player', socketid);*/
 	socket.emit('play', val );
 	console.log("You played "+ val);
 	
@@ -16,6 +16,7 @@ $("#play").click(function() {
 socket.on('play', function(msg){
 	$("#you").text( "You played " + msg);
 });
+
 
 
 
