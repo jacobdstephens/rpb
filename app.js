@@ -16,7 +16,9 @@ app.get('/:file', function(req, res){
 });
 
 io.on('connection', function (socket) {
-	console.log('blah');
+	io.to(socket.id).emit('your id', socket.id);
+	console.log(socket.id);
+	
 	socket.on('player', function (id){
     	console.log(id);
 		io.emit('player', id);

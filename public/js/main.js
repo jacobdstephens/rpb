@@ -1,8 +1,8 @@
 socket = io.connect();
-socket.emit('player', socket.id);
+
   
 
-socket.on('player', function(id){
+socket.on('your id', function(id){
 	$("#them").text( "player id " + id);
 });
 
