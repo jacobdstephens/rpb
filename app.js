@@ -15,18 +15,22 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
+var playerCount = 0;
+var players = {};
+
 io.on('connection', function (socket) {
-	io.to(socket.id).emit('your id', socket.id);
-	console.log(socket.id);
-	
-	socket.on('player', function (id){
-    	console.log(id);
-		io.emit('player', id);
-	});
-		
+	playerCount++;
+	players[socket.id] = true;
+	/* Use Join Rooms feature ? */
+	io.to(socket.id).emit('playerID', socket.id);
+	console.log('playerID = ' + socket.id);
+	io.to(socket.id).emit('playerCount', playerCount);
+	console.log('playerCount ' + playerCount);
+	/* */
   	socket.on('play', function (msg){
-    	console.log(msg);
-		io.emit('play', msg);
+    	console.log(socket.id + " played " + msg);
+		/* run rps */
+		io.emit('win', socket.id + " played " + msg);
   	});
 });
 
