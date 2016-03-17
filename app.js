@@ -27,7 +27,7 @@ io.on('connection', function (socket) {
 	io.to(socket.id).emit('playerCount', playerCount);
 	console.log('playerCount ' + playerCount);
 	/* */
-  	socket.on('play', function (msg){
+  	socket.on('my_play', function (msg){
     	console.log(socket.id + " played " + msg);
 		/* run rps */
 		io.emit('win', socket.id + " played " + msg);
