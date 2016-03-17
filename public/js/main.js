@@ -1,6 +1,5 @@
 socket = io.connect();
-
-io.emit('start_game')
+socket.emit('start_game')
 console.log("starting game";
 
 var _myid = 0;
