@@ -6,12 +6,12 @@ console.log("starting game";
 var _myid = 0;
 var _playerCount = 0;
 
-socket().on('playerID', function(id){
+socket.on('playerID', function(id){
 	$("#playerID").text( "my playerID " + id);
 	console.log("player ID: "+ id);
 });
 
-socket().on('playerCount', function(count){
+socket.on('playerCount', function(count){
 	$("#Players").text( "Players: " + count);
 	console.log("Player = "+ count);
 });
