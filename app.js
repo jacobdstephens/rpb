@@ -25,7 +25,7 @@ io.on('connection', function (socket) {
 		playerCount++;
 		players[socket.id] = true;
 		/* Use Join Rooms feature ? */
-		io.emit('playerID =' + socket.id);
+		io.emit('playerID' + socket.id);
 		console.log('playerID = ' + socket.id);
 		io.emit('playerCount', playerCount);
 		console.log('playerCount ' + playerCount);
