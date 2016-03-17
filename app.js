@@ -19,14 +19,18 @@ var playerCount = 0;
 var players = {};
 
 io.on('connection', function (socket) {
-	playerCount++;
-	players[socket.id] = true;
-	/* Use Join Rooms feature ? */
 	io.to(socket.id).emit('playerID', socket.id);
-	console.log('playerID = ' + socket.id);
-	io.emit('playerCount', playerCount);
-	console.log('playerCount ' + playerCount);
-	/* */
+	console.log('player connected');
+	socket.on('start_game', function (){
+		playerCount++;
+		players[socket.id] = true;
+		/* Use Join Rooms feature ? */
+		io.emit('playerID =' + socket.id);
+		console.log('playerID = ' + socket.id);
+		io.emit('playerCount', playerCount);
+		console.log('playerCount ' + playerCount);
+		});
+		/* */
   	socket.on('my_play', function (msg){
     	console.log(socket.id + " played " + msg);
 		/* run rps */

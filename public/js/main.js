@@ -1,5 +1,7 @@
 socket = io.connect();
 
+io.emit('start_game')
+
 var _myid = 0;
 var _playerCount = 0;
 
