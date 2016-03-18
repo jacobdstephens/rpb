@@ -15,11 +15,11 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
-var gameEngine = require('rock-paper-spock');
-var instance = new gameEngine(gameEngine.DefaultRules);
+gameEngine = require('rock-paper-spock');
+instance = new gameEngine(gameEngine.DefaultRules);
 
-var playerCount = 0;
-var players = {};
+playerCount = 0;
+players = {};
 
 io.on('connection', function (socket) {
 		
@@ -41,7 +41,7 @@ io.on('connection', function (socket) {
 		if ( playerCount > 1 ) {
 			instance.play();
 console.log(instance.winner);
-			io.emit('win', socket.id + " Win! " + instance.winner);
+			io.emit('win', socket.id + " Win! " + insta`nce.winner);
 		}
 		
   	});
