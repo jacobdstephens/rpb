@@ -25,14 +25,14 @@ io.on('connection', function (socket) {
 		
 	socket.on('start_game', function (){
 		playerCount++;
-		/*players[socket.id] = true;*/
+		players[socket.id] = true;
 		/* Use Join Rooms feature ? */
 		io.to(socket.id).emit('playerID ', socket.id);
 		socket.emit('playerID', socket.id);
 		console.log('playerID = ' + socket.id);
 		io.emit('playerCount', playerCount);
 		console.log('playerCount ' + playerCount);
-		});
+	});
 		/* */
   	socket.on('my_play', function (msg){
 		instance.addPlayer({id: playerCount, sign: msg });
@@ -45,6 +45,17 @@ console.log(instance.winner);
 		}
 		
   	});
+
+	socket.on('disconnect', function(){
+		if (players[socket.id]) {
+      		playerCount--;
+      		delete players[socket.id];
+      		console.log('disconnected: ' + socket.id + ' count ' + playerCount);
+      		io.emit('player left', socket.id);
+      		io.emit('player count', playerCount);
+    	}
+  	});
+
 });
 
 
