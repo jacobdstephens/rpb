@@ -1,17 +1,17 @@
 socket = io.connect();
-socket.emit('start_game')
-console.log("starting game";
+socket.emit('start_game');
+console.log("starting game");
 
 var _myid = 0;
 var _playerCount = 0;
 
 socket.on('playerID', function(id){
-	$("#playerID").text( "my playerID " + id);
+	$("#p_ID").text( "my playerID " + id);
 	console.log("player ID: "+ id);
 });
 
 socket.on('playerCount', function(count){
-	$("#Players").text( "Players: " + count);
+	$("#p_Num").text( "Players: " + count);
 	console.log("Player = "+ count);
 });
 
