@@ -34,8 +34,8 @@ io.on('connection', function (socket) {
 		console.log('playerCount ' + playerCount);
 	});
 		/* */
-  	socket.on('play', function (msg){
-		instance.addPlayer({id: playerCount, sign: msg });
+  	socket.on('play', function (p_ID, msg){
+		instance.addPlayer({id: p_ID, sign: msg });
     	console.log(socket.id + " played " + msg);
 		/* run rps */
 		if ( playerCount > 1 ) {
