@@ -17,7 +17,7 @@ socket.on('playerCount', function(count){
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
-	socket.emit('play', { id , val }) );
+	socket.emit('play', { id: p_ID , sign: val }) );
 	console.log("You played "+ val);
 	$("#my_play").text( "You played " + val);
 });
