@@ -14,6 +14,10 @@ app.get('/', function(req, res){
 app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
+app.get('/img/:file', function(req, res){
+  res.sendFile(__dirname + '/img/' + req.params.file);
+});
+
 
 gameEngine = require('rock-paper-spock');
 instance = new gameEngine(gameEngine.DefaultRules);
