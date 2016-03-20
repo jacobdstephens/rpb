@@ -7,17 +7,20 @@ server.listen(5000);
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', function (req, res) {
+	  res.sendFile('index',
+		    { title : 'Home' }
+		      )
+});
+
+/*
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
-});
-app.get('/img/:file', function(req, res){
-  res.sendFile(__dirname + '/img/' + req.params.file);
-});
-
+});*/
 
 gameEngine = require('rock-paper-spock');
 instance = new gameEngine(gameEngine.DefaultRules);
