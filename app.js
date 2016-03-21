@@ -49,7 +49,7 @@ io.on('connection', function (socket) {
 		/* */
   	socket.on('play', function (data)		{
 		var p_ID = data.id;
-		var msg = data.msg;	
+		var msg = data.sign;	
 		instance.addPlayer({id: p_ID, sign: msg });
     	console.log(socket.id + " played " + msg);
 		/* run rps */

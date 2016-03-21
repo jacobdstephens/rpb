@@ -2,7 +2,7 @@ socket = io.connect();
 socket.emit('start_game');
 console.log("starting game");
 
-var _myid = 0;
+var p_ID = 0;
 var _playerCount = 0;
 
 socket.on('playerID', function(id){
@@ -11,14 +11,14 @@ socket.on('playerID', function(id){
 });
 
 socket.on('playerCount', function(count){
-	_myid = count;
+	p_ID = count;
 	$("#p_Num").text( "Players: " + count);
-	console.log("Player = "+ _myid);
+	console.log("Player = "+ p_ID);
 });
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
-	socket.emit('play', { id: _myid , sign: val }) );
+	socket.emit('play', { id: p_ID , sign: val }) );
 	console.log("You played "+ val);
 	$("#my_play").text( "You played " + val);
 });
