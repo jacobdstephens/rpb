@@ -22,9 +22,9 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
-app.get('/assets/:file', function(req, res){
+/*app.get('/assets/:file', function(req, res){
   res.sendFile(__dirname + '/assets/' + req.params.file);
-});
+});*/
 
 gameEngine = require('rock-paper-spock');
 instance = new gameEngine(gameEngine.DefaultRules);
