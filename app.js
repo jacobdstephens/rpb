@@ -22,6 +22,10 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
+app.get('/assets/:file', function(req, res){
+  res.sendFile(__dirname + '/assets/' + req.params.file);
+});
+
 gameEngine = require('rock-paper-spock');
 instance = new gameEngine(gameEngine.DefaultRules);
 
@@ -41,7 +45,9 @@ io.on('connection', function (socket) {
 		console.log('playerCount ' + playerCount);
 	});
 		/* */
-  	socket.on('play', function (p_ID, msg){
+  	socket.on('play', function (data)		{
+		var p_ID = data.id;
+		var msg = data.msg;	
 		instance.addPlayer({id: p_ID, sign: msg });
     	console.log(socket.id + " played " + msg);
 		/* run rps */

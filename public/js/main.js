@@ -11,13 +11,14 @@ socket.on('playerID', function(id){
 });
 
 socket.on('playerCount', function(count){
+	_myid = count;
 	$("#p_Num").text( "Players: " + count);
-	console.log("Player = "+ count);
+	console.log("Player = "+ _myid);
 });
 
 $("#play").click(function() { 
 	var val = $('input[type=radio]:checked').val();
-	socket.emit('play', { id: p_ID , sign: val }) );
+	socket.emit('play', { id: _myid , sign: val }) );
 	console.log("You played "+ val);
 	$("#my_play").text( "You played " + val);
 });
