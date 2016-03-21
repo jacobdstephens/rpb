@@ -11,17 +11,19 @@ app.use('/public', express.static(__dirname + "/public"));
 	  res.sendFile('index',
 		    { title : 'Home' }
 		      )
-});
-
+}); 
+*/
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+
 app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
+/*
 app.get('/assets/:file', function(req, res){
   res.sendFile(__dirname + '/assets/' + req.params.file);
 });*/
