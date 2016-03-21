@@ -19,8 +19,8 @@ app.get('/', function(req, res){
 });
 
 
-app.get('/:file', function(req, res){
-  res.sendFile(__dirname + '/' + req.params.file);
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/courtyard360.jpeg' );
 });
 
 /*
