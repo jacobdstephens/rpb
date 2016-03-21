@@ -7,13 +7,13 @@ server.listen(5000);
 
 app.use(express.static(__dirname + '/public'));
 
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	  res.sendFile('index',
 		    { title : 'Home' }
 		      )
-});*/
+});
 
-
+/*
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
@@ -22,7 +22,7 @@ app.get('/:file', function(req, res){
   res.sendFile(__dirname + '/' + req.params.file);
 });
 
-/*app.get('/assets/:file', function(req, res){
+app.get('/assets/:file', function(req, res){
   res.sendFile(__dirname + '/assets/' + req.params.file);
 });*/
 
