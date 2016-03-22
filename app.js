@@ -48,8 +48,8 @@ io.on('connection', function (socket) {
 	});
 		/* */
   	socket.on('play', function (data)		{
-		var p_ID = data.p_ID;
-		var msg = data.val;	
+		var p_ID = data.id;
+		var msg = data.sign;	
 		instance.addPlayer({id: p_ID, sign: msg });
     	console.log(socket.id + " played " + msg);
 		/* run rps */
