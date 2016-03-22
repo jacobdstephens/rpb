@@ -24,6 +24,6 @@ $("#play").click(function() {
 });
 
 socket.on('win', function(win){
-	$("#win").text( win + "wins!");
+	$("#win").text( win.id + "wins!");
 });
 

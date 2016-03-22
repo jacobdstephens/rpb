@@ -56,7 +56,7 @@ io.on('connection', function (socket) {
 		if ( playerCount > 1 ) {
 			instance.play();
 console.log(instance.winner);
-			io.emit('win', socket.id + " Win! " + instance.winner);
+			io.emit('win', instance.winner);
 		}
 		
   	});
