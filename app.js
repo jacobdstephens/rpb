@@ -35,7 +35,7 @@ playerCount = 0;
 players = {};
 
 io.on('connection', function (socket) {
-		
+	console.log('someone connected');
 	socket.on('start_game', function (){
 		playerCount++;
 		players[socket.id] = true;
