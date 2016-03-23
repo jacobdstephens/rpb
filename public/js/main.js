@@ -1,6 +1,12 @@
 socket = io.connect();
-socket.emit('start_game');
-console.log("starting game");
+
+$("#start").click(function() { 
+	socket.emit('start_game');
+	console.log("starting game");
+	$("#intro").text("Ready to Play. Select Rock, Paper or Bitcoin, then press Play!");
+});
+
+
 
 var p_ID = 0;
 var _playerCount = 0;
